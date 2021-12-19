@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @appointment.date %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @appointment.name %>
+</p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @appointment.surname %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @appointment.phone %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @appointment.notes %>
+</p>
+
+<p>
+  <strong>Profesional:</strong>
+  <%= @appointment.professional.name %>
+</p>
+<% if can? :manage, Appointment %>
+<%= link_to 'Edit', edit_professional_appointment_path(@professional, @appointment) %> |
+<% end %>
+<%= link_to 'Back', professional_appointments_path(@professional) %>
